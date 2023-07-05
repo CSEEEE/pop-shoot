@@ -37,7 +37,15 @@ export class GameoverGfx {
             STATS_FONTSIZE
         );
         SceneUtils.drawCenteredText(`YOU DIED AT STAGE ${game.state.stage + 1}`, DIED_X, DIED_Y, STATS_FONTSIZE);
-        SceneUtils.drawCenteredText(`EARNED SATS: ${game.cashcontroller.cash}`, EARNED_X, EARNED_Y, STATS_FONTSIZE);
+        
+        const earnedSatsText = `EARNED SATS: ${game.cashcontroller.cash}`;
+        SceneUtils.drawCenteredText(earnedSatsText, EARNED_X, EARNED_Y, STATS_FONTSIZE);
+
+        // Add code to update HTML content
+        const earnedSatsElement = document.getElementById('earned-sats');
+        if (earnedSatsElement) {
+            earnedSatsElement.textContent = earnedSatsText;
+        }
 
 // add function to show qr code to redeem sats
 
