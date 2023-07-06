@@ -49,6 +49,7 @@ export class GameoverGfx {
 
         const earnedSats = game.cashcontroller.cash;
         window.parent.postMessage({ earnedSats: earnedSats }, '*');
+        console.log('postMessage sent with earnedSats:', earnedSats); // ADD THIS
 
         SceneUtils.drawCenteredText(`PRESS SPACE TO REPLAY`, SPACE_X, SPACE_Y, STATS_FONTSIZE);
     }
