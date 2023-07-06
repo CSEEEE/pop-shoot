@@ -47,8 +47,8 @@ export class GameoverGfx {
             earnedSatsElement.textContent = earnedSatsText;
         }
 
-// add function to show qr code to redeem sats
-
+        const earnedSats = game.cashcontroller.cash;
+        window.parent.postMessage({ earnedSats: earnedSats }, '*');
 
         SceneUtils.drawCenteredText(`PRESS SPACE TO REPLAY`, SPACE_X, SPACE_Y, STATS_FONTSIZE);
     }
